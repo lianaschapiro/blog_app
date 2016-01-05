@@ -6,15 +6,20 @@
 
 <h2>Your Posts:</h2>
 
+	<%@user.posts.each do |t|%>
+	<h2><%= t.title %> </h2>
+	<p><%= t.body %> </p>
+	<% end %>
+
 <h2>Submit a Post</h2>
             <form method="POST" action="/new-post">
-			<label for="Title">Title</label>
+			<label for="title">Title</label>
 			<br>
-			<input type="text" name="Title">
+			<input type="text" name="title">
 			<br><br><br>
 			<label for="body">Body</label>
 			<br>
-			<textarea rows="4" cols="50"type="text" name="Body"></textarea>
+			<textarea rows="4" cols="50"type="text" name="body"></textarea>
 			<br><br><br>
 			<input type="submit">
 		</form>
