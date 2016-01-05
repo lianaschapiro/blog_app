@@ -7,6 +7,14 @@ require "./models"
 set :database, "sqlite3:myblogdb.sqlite3"
 enable :sessions
 
+get '/' do
+	@user = current_user
+	if @user
+		erb :home
+	else
+		redirect '/sign-in'
+	end
+end
 
 
 get '/sign-in' do
@@ -22,6 +30,10 @@ post '/sign-in' do
 	else
 		redirect '/sign-in'
 	end
+end
+
+get'/sign-up' do
+	erb :create
 end
 
 post '/sign-up' do
@@ -42,4 +54,10 @@ get '/logout' do
 	session.clear
 	redirect '/sign-in'
 end
+
+
+get '/profile' do
+	erb :profile
+end
+
 	
