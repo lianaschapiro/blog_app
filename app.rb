@@ -8,6 +8,7 @@ set :database, "sqlite3:myblogdb.sqlite3"
 enable :sessions
 
 get '/' do
+	@posts = Post.all
 	@user = current_user
 	if @user
 		erb :home
@@ -57,6 +58,7 @@ end
 
 
 get '/profile' do
+	@posts = Post.all
 	@user = current_user
 	erb :profile
 end
@@ -64,7 +66,8 @@ end
 
 
 post '/new-post' do
-	@post = Post.new(title: params[:title], body: params[:body])
+	@user = current_user
+	@post = Post.new(title: params[:title], body: params[:body], user_id: current_user.id)
 	if !@post.save
 		flash[:notice]="Your post was too long. Please try again"
 		redirect '/profile'
