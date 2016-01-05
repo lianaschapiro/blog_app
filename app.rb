@@ -24,6 +24,12 @@ post '/sign-in' do
 	end
 end
 
+post '/sign-up' do
+	@user = User.create(username: params[:username], password: params[:password])
+	session[:user_id] = @user.id
+	redirect '/'
+end
+
 
 def current_user
 	if session[:user_id]
