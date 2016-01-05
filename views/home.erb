@@ -5,5 +5,7 @@
 <h1>All Posts</h1>
 
    	<% @posts.each do |t| %>
-		<h2>By: <%= t.user.firstname %></h2>
+   		<h2><%= t.title %></h2>
+		<p>By: <%= t.user.firstname %></p>
+		<p><%= t.body %></p>
   	<% end %>

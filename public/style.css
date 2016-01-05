@@ -8,6 +8,8 @@
 	text-align: center;
 }
 
-#logout {
+nav li {
 	float: right;
+	padding: 10px;
+	list-style-type: none;
 }
