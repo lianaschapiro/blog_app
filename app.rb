@@ -25,7 +25,7 @@ end
 post '/sign-in' do
 	@user = User.where(username: params[:username]).first
 	if @user && @user.password == params[:password] 
-		session[:user_id] = @user_id
+		session[:user_id] = @user.id
 		redirect '/'    
 	else
 		redirect '/sign-in'
@@ -61,18 +61,18 @@ get '/profile' do
 	erb :profile
 end
 
-get '/new-post'do
-	erb :home
-end
 
-# post '/new-post' do
-# 	@post = Post.new(title: params[:title], body: params[:body])
-# 	if !@post.save
-# 		flash [:notice]="Your post was too long. Please try again"
-# 	else
-# 		flash [:notice]="Thanks for sharing your thoughts!"
-# 	end
-# 	end
-# end
+
+post '/new-post' do
+	@post = Post.new(title: params[:title], body: params[:body])
+	if !@post.save
+		flash[:notice]="Your post was too long. Please try again"
+		redirect '/profile'
+	else
+		flash[:notice]="Thanks for sharing your thoughts!"
+        redirect '/profile'
+	end
+
+	end
 
 	

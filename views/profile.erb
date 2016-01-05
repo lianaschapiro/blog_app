@@ -3,6 +3,19 @@
 
 <h2>Your username is: <%= @user.username %></h2>
 
+
 <h2>Your Posts:</h2>
 
+<h2>Submit a Post</h2>
+            <form method="POST" action="/new-post">
+			<label for="Title">Title</label>
+			<br>
+			<input type="text" name="Title">
+			<br><br><br>
+			<label for="body">Body</label>
+			<br>
+			<textarea rows="4" cols="50"type="text" name="Body"></textarea>
+			<br><br><br>
+			<input type="submit">
+		</form>
 <h2>Users You Follow:</h2>
