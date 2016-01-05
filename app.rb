@@ -37,7 +37,7 @@ get'/sign-up' do
 end
 
 post '/sign-up' do
-	@user = User.create(username: params[:username], password: params[:password])
+	@user = User.create(firstname: params[:firstname], lastname: params[:lastname], username: params[:username], email: params[:email], password: params[:password])
 	session[:user_id] = @user.id
 	redirect '/'
 end
