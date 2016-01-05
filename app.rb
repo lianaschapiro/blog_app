@@ -57,7 +57,22 @@ end
 
 
 get '/profile' do
+	@user = current_user
 	erb :profile
 end
+
+get '/new-post'do
+	erb :home
+end
+
+# post '/new-post' do
+# 	@post = Post.new(title: params[:title], body: params[:body])
+# 	if !@post.save
+# 		flash [:notice]="Your post was too long. Please try again"
+# 	else
+# 		flash [:notice]="Thanks for sharing your thoughts!"
+# 	end
+# 	end
+# end
 
 	
