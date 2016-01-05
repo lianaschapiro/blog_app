@@ -1,3 +1,13 @@
-body {
+* {
 	background-color: pink;
+}
+
+#login, #sign-up {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#logout {
+	float: right;
 }

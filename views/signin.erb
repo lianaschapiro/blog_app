@@ -1,17 +1,18 @@
-<h1>SIGN IN</h1>
-	<p>Please sign in using your Username and Password</p>
-	
-		<div id="login">
+<div id="login">
+	<h1>SIGN IN</h1>
+		<p>Please sign in using your Username and Password</p>
+		<br>
+		<form method="POST" action="/sign-in">
+			<label for="username">Username</label>
 			<br>
-			<form method="POST" action="/sign-in">
-				<label for="username">Username</label>
-				<br>
-				<input type="text" name="username">
-				<br><br><br>
-				<label for="password">Password</label>
-				<br>
-				<input type="password" name="password">
-				<br><br><br>
-				<input type="submit">
-			</form>
-		</div>
+			<input type="text" name="username">
+			<br><br><br>
+			<label for="password">Password</label>
+			<br>
+			<input type="password" name="password">
+			<br><br><br>
+			<input type="submit">
+		</form>
+
+	<h2>If you don't already have an account, click <a href="/sign-up">here</a> to sign up!</h2>
+</div>
