@@ -1,11 +1,30 @@
-<div id="main">
+<div class="main">
 	<h1>Welcome, <%= @user.firstname %></h1>
 </div>
-
-<h1>All Posts</h1>
-
-   	<% @posts.each do |t| %>
-   		<h2><%= t.title %></h2>
-		<p>By: <%= t.user.firstname %></p>
-		<p><%= t.body %></p>
-  	<% end %>
+<div class="col1">	
+	<h2>Check out the latest posts in your community:</h2>
+	<div class="post">
+		<% @posts.reverse.each do |t| %>
+			<br>
+			<h3><%= t.title %></h3>
+			<p>By: <%= t.user.username %></p>
+			<p><%= t.created_at.to_date %></p>
+			<hr>
+			<p><%= t.body %></p>
+			<br>
+		<% end %>
+	</div>
+</div>
+<div class="col2">
+	<h2>Tell the world how you're feeling...<br>Write a new a post:</h2>
+	<form method="POST" action="/new-post-home">
+	<label for="title">Title: </label>
+	<input type="text" name="title">
+	<br><br>
+	<label for="body">Body:</label>
+	<br>
+	<textarea rows="4" cols="40"type="text" name="body"></textarea>
+	<br><br>
+	<input type="submit">
+</form>
+</div>

@@ -1,26 +1,34 @@
-<h1><%= @user.firstname %>'s Profile</h1>
-
-
-<h2>Your username is: <%= @user.username %></h2>
-
-
-<h2>Your Posts:</h2>
-
-	<%@user.posts.each do |t|%>
-	<h2><%= t.title %> </h2>
-	<p><%= t.body %> </p>
-	<% end %>
-
-<h2>Submit a Post</h2>
-            <form method="POST" action="/new-post">
-			<label for="title">Title</label>
-			<br>
+<div class="main">
+	<h1><%= @user.firstname %>'s Profile</h1>
+		<h2>Your username is: <%= @user.username %></h2>
+		<hr>
+</div>
+<div class="col1">	
+	<h2>Users You Follow:</h2>
+	<h2>Users Who Follow You:</h2>
+</div>
+<div class="col2">
+	<h2>Submit a Post</h2>
+        <form method="POST" action="/new-post">
+			<label for="title">Title: </label>
 			<input type="text" name="title">
-			<br><br><br>
-			<label for="body">Body</label>
+			<br><br>
+			<label for="body">Body:</label>
 			<br>
-			<textarea rows="4" cols="50"type="text" name="body"></textarea>
-			<br><br><br>
+			<textarea rows="4" cols="40"type="text" name="body"></textarea>
+			<br><br>
 			<input type="submit">
 		</form>
-<h2>Users You Follow:</h2>
+		<br><br>
+	<h2>Your Previous Posts:</h2>
+	<div class="post">
+		<%@user.posts.each do |t|%>
+			<br>
+			<h3><%= t.title %> </h3>
+			<hr>
+			<p><%= t.body %> </p>
+			<br>
+		<% end %>
+	</div>
+</div>
+
