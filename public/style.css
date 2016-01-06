@@ -29,6 +29,10 @@ nav a:hover{
 	color: #900000;
 }
 
+nav li:hover {
+	transform: scale(1.2, 1.2);
+}
+
 #login, #sign-up, .main {
 	width: 50%;
 	margin: 50px auto;
@@ -36,7 +40,7 @@ nav a:hover{
 }
 
 .col1, .col2 {
-	width: 45%;
+	width: 50%;
 	float: left;
 	text-align: center;
 }
