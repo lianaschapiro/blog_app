@@ -8,6 +8,13 @@
 
 	</head>
   <body>
+
+      <% if flash[:notice] %>     
+        <div class="flashnotice">       
+          <%= flash[:notice] %>     
+        </div>   
+      <% end %>
+
     	<nav>
         	<ul>
         		<li><a href="/logout">LOG OUT</a></li>

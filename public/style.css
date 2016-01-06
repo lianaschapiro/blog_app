@@ -9,6 +9,10 @@ body {
 	background-attachment: fixed;
 }
 
+a {
+	text-decoration: none;
+}
+
 nav {
 	height: 20px;
 }
@@ -20,7 +24,6 @@ nav li {
 }	
 
 nav a {
-	text-decoration: none;
 	color: black;
 	font-size: 18px;
 	font-weight: bold;
@@ -36,7 +39,7 @@ nav li:hover {
 
 #login, #sign-up, .main {
 	width: 50%;
-	margin: 50px auto;
+	margin: 50px auto 20px;
 	text-align: center;
 }
 
@@ -47,7 +50,7 @@ nav li:hover {
 }
 
 h1, h2, p {
-	margin: 10px auto;
+	margin-bottom: 10px;
 }
 
 h1, h3 {
@@ -77,10 +80,22 @@ h1, h3 {
 
 #delete a{
 	color: #900000;
-	text-decoration: none;
 	display: inline-block;
 }
 
 #delete img {
+	display: inline-block;
+}
+
+#delete_account h1, p{
+	border: solid 3px black;
+	display: inline-block;
+	padding: 10px;
+	background-color: #c8c8c8;
+	color: black;
+	margin-top: 50px;
+}
+
+#delete_account h3 {
 	display: inline-block;
 }
