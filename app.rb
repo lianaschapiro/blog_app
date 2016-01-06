@@ -2,9 +2,10 @@ require "sinatra"
 require "sinatra/activerecord"
 require "sinatra/flash"
 require "./models"
+require "carrierwave"
 
 
-set :database, "sqlite3:myblogdb.sqlite3"
+configure(:development){set :database, "sqlite3:myblogdb.sqlite3"}
 enable :sessions
 
 get '/' do

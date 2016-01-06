@@ -4,8 +4,8 @@
 		<hr>
 </div>
 <div class="col1">	
-	<h2>Users You Follow:</h2>
-	<h2>Users Who Follow You:</h2>
+	<h2>Your profile picture:</h2>
+	<p>Change your profile picture</p>
 </div>
 <div class="col2">
 	<h2>Submit a Post</h2>
@@ -22,7 +22,7 @@
 		<br><br>
 	<h2>Your Previous Posts:</h2>
 	<div class="post">
-		<%@user.posts.each do |t|%>
+		<%@user.posts.reverse.each do |t|%>
 			<br>
 			<h3><%= t.title %> </h3>
 			<hr>
@@ -30,5 +30,6 @@
 			<br>
 		<% end %>
 	</div>
+	<br><br>
 </div>
 

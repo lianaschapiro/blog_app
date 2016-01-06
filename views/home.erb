@@ -3,20 +3,23 @@
 </div>
 <div class="col1">	
 	<h2>Check out the latest posts in your community:</h2>
+	<br>
 	<div class="post">
-		<% @posts.reverse.each do |t| %>
+		<% @posts.last(10).each do |t| %>
 			<br>
 			<h3><%= t.title %></h3>
 			<p>By: <%= t.user.username %></p>
-			<p><%= t.created_at.to_date %></p>
+			<p>Posted on: <%= t.created_at.to_date %></p>
 			<hr>
 			<p><%= t.body %></p>
-			<br>
+			<br> 
 		<% end %>
 	</div>
+	<br><br>
 </div>
 <div class="col2">
 	<h2>Tell the world how you're feeling...<br>Write a new a post:</h2>
+	<br>
 	<form method="POST" action="/new-post-home">
 	<label for="title">Title: </label>
 	<input type="text" name="title">
