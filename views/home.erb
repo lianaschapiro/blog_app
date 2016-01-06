@@ -5,7 +5,7 @@
 	<h2>Check out the latest posts in your community:</h2>
 	<br>
 	<div class="post">
-		<% @posts.last(10).each do |t| %>
+		<% @posts.last(10).reverse.each do |t| %>
 			<br>
 			<h3><%= t.title %></h3>
 			<p>By: <%= t.user.username %></p>

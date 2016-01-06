@@ -90,4 +90,21 @@ post '/new-post-home' do
 	end
 end
 
+get '/deletepost/:id' do
+	post = Post.find(params[:id])
+	post.destroy
+	redirect '/profile'
+end
+
+
+get '/delete' do
+	@user = current_user
+	erb :delete
+end
+
+get '/dead-user' do
+	@user = current_user
+	@user.destroy
+	redirect '/sign-up'
+end
 	
