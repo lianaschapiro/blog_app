@@ -6,6 +6,7 @@
 body {
 	background-image: url(images/paper.jpg);
 	background-size: 100%;
+	background-attachment: fixed;
 }
 
 nav {
@@ -65,4 +66,21 @@ h1, h3 {
 .post hr{
 	width:80%;
 	margin:0 auto;
+}
+
+#delete {
+	text-align: center;
+	margin: 0 auto;
+	width: 600px;
+	clear: both;
+}
+
+#delete a{
+	color: #900000;
+	text-decoration: none;
+	display: inline-block;
+}
+
+#delete img {
+	display: inline-block;
 }

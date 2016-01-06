@@ -1,6 +1,7 @@
 <div class="main">
 	<h1><%= @user.firstname %>'s Profile</h1>
 		<h2>Your username is: <%= @user.username %></h2>
+			<p>[edit account details]</p>
 		<hr>
 </div>
 <div class="col1">	
@@ -27,9 +28,19 @@
 			<h3><%= t.title %> </h3>
 			<hr>
 			<p><%= t.body %> </p>
-			<br>
+			<a href="/deletepost/<%= t.id %>">Delete</a>
+			<br><br><br>
 		<% end %>
 	</div>
-	<br><br>
+	<br><br><br><br>
 </div>
+<div id="delete">
+	<a href="/delete">
+		<img src="images/skull.png" height="75">
+		<h2>DELETE MY ACCOUNT</h2>	
+		<img src="images/skull.png" height="75">
+	</a>
+</div>
+<br><br>
+
 
