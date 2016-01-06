@@ -1,15 +1,64 @@
 * {
-	background-color: pink;
+	margin: 0;
+	padding: 0;
 }
 
-#login, #sign-up {
-	width: 80%;
-	margin: 0 auto;
-	text-align: center;
+body {
+	background-image: url(images/paper.jpg);
+	background-size: 100%;
+}
+
+nav {
+	height: 20px;
 }
 
 nav li {
 	float: right;
-	padding: 10px;
+	padding: 15px;
 	list-style-type: none;
+}	
+
+nav a {
+	text-decoration: none;
+	color: black;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+nav a:hover{
+	color: #900000;
+}
+
+#login, #sign-up, .main {
+	width: 50%;
+	margin: 50px auto;
+	text-align: center;
+}
+
+.col1, .col2 {
+	width: 45%;
+	float: left;
+	text-align: center;
+}
+
+h1, h2, p {
+	margin: 10px auto;
+}
+
+h1, h3 {
+	color: #900000;
+}
+
+.post {
+	border: solid 2px black;
+	border-radius: 25px;
+	width: 40%;
+	margin: 0 auto;
+	padding: 5px;
+	background-color: #c8c8c8;
+}
+
+.post hr{
+	width:80%;
+	margin:0 auto;
 }

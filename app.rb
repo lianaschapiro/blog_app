@@ -75,7 +75,18 @@ post '/new-post' do
 		flash[:notice]="Thanks for sharing your thoughts!"
         redirect '/profile'
 	end
+end
 
+post '/new-post-home' do
+	@user = current_user
+	@post = Post.new(title: params[:title], body: params[:body], user_id: current_user.id)
+	if !@post.save
+		flash[:notice]="Your post was too long. Please try again"
+		redirect '/'
+	else
+		flash[:notice]="Thanks for sharing your thoughts!"
+        redirect '/'
 	end
+end
 
 	
