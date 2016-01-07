@@ -63,11 +63,21 @@ end
 
 
 get '/profile' do
-	@posts = Post.all
 	@user = current_user
-	erb :profile
+	if @user
+		erb :profile
+	else
+		redirect '/sign-in'
+	end
 end
 
+
+get '/:username' do
+	@posts = Post.all
+	@user = current_user
+	@person = User.where(username: params[:username]).first
+	erb :otherpersonprofile
+end
 
 
 post '/new-post' do
@@ -81,6 +91,7 @@ post '/new-post' do
         redirect '/profile'
 	end
 end
+
 
 post '/new-post-home' do
 	@user = current_user

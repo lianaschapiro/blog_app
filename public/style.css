@@ -51,7 +51,7 @@ header img {
 	padding-left: 10px;
 }
 
-#login, #sign-up, .main {
+.main {
 	width: 50%;
 	margin: 0px auto 20px;
 	text-align: center;

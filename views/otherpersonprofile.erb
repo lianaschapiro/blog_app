@@ -1,0 +1,13 @@
+<div class="main">
+	<h1><%= @person.username %>'s Profile</h1>
+		<br>
+		<h2>Posts by <%= @person.username %>:</h2>
+		<div class="post">
+			<% @person.posts.reverse.each do |t| %>
+			<br>
+				<h3><%= t.title %> </h3>
+				<hr>
+				<p><%= t.body %> </p>
+			<% end %>
+		</div>
+</div>
