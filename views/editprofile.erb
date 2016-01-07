@@ -1,0 +1,39 @@
+<div class="main">
+	<h1>Edit My Profile</h1>
+	<br><br>
+		<h3>Change My Username</h3>
+		<form method="POST" action="/change-username">
+			<label for="username">Type new username:</label>
+			<input type="text" name="newusername">
+			<br>
+			<label for="username">Confirm new username:</label>
+			<input type="text" name="confirmnewusername">
+			<br>
+			<input type="submit">
+		</form>
+		<br><br><br>
+		<h3>Change My Password</h3>
+		<form method="POST" action="/change-password">
+			<label for="password">Type old password:</label>
+			<input type="password" name="oldpassword">
+			<br>
+			<label for="password">Type new password:</label>
+			<input type="password" name="newpassword">
+			<br>
+			<label for="password">Confirm new password:</label>
+			<input type="password" name="confirmnewpassword">
+			<br>
+			<input type="submit">
+		</form>
+		<br><br><br>
+		<h3>Change My Email</h3>
+		<form method="POST" action="/change-email">
+			<label for="email">Type new email address:</label>
+			<input type="text" name="newemail">
+			<br>
+			<label for="email">Confirm new email address:</label>
+			<input type="text" name="confirmnewemail">
+			<br>
+			<input type="submit">
+		</form>
+</div>
