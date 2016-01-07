@@ -56,9 +56,14 @@ end
 
 
 get '/logout' do
-	session.clear
-	flash[:notice]="Come back again soon!"
-	redirect '/sign-in'
+	@user = current_user
+	if @user
+		session.clear
+		flash[:notice]="Come back again soon!"
+		redirect '/sign-in'
+	else
+		redirect 'sign-in'
+	end
 end
 
 
