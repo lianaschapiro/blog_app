@@ -28,8 +28,10 @@ post '/sign-in' do
 	@user = User.where(username: params[:username]).first
 	if @user && @user.password == params[:password] 
 		session[:user_id] = @user.id
+		flash[:notice]="You're logged in!"
 		redirect '/'    
 	else
+		flash[:notice]="That didn't seem to work...try again?"
 		redirect '/sign-in'
 	end
 end
@@ -41,6 +43,7 @@ end
 post '/sign-up' do
 	@user = User.create(firstname: params[:firstname], lastname: params[:lastname], username: params[:username], email: params[:email], password: params[:password])
 	session[:user_id] = @user.id
+	flash[:notice]="Welcome to Blog It! Post and share!"
 	redirect '/'
 end
 
@@ -54,6 +57,7 @@ end
 
 get '/logout' do
 	session.clear
+	flash[:notice]="Come back again soon!"
 	redirect '/sign-in'
 end
 
@@ -93,6 +97,7 @@ end
 get '/deletepost/:id' do
 	post = Post.find(params[:id])
 	post.destroy
+	flash[:notice]="Your post has been deleted."
 	redirect '/profile'
 end
 
@@ -102,9 +107,61 @@ get '/delete' do
 	erb :delete
 end
 
+
+get '/edit-profile' do
+	@user = current_user
+	erb :editprofile
+end
+
+
+post '/change-username' do
+	@user = current_user
+	if params[:newusername] == params[:confirmnewusername]
+		@user.update(username: params[:confirmnewusername])
+		flash[:notice]="Your username has been changed."
+		redirect '/edit-profile'
+	else
+		flash[:notice]="Your usernames don't match."
+		redirect '/edit-profile'
+	end
+end
+
+
+post '/change-password' do
+	@user = current_user
+	if params[:oldpassword] == @user.password
+		if params[:newpassword] == params[:confirmnewpassword]
+			@user.update(password: params[:confirmnewpassword])	
+			flash[:notice]="Your password has been changed."
+			redirect '/edit-profile'
+		else
+			flash[:notice]="Your passwords don't match."
+			redirect '/edit-profile'
+		end
+	else
+		flash[:notice]="That's not your password."
+		redirect '/edit-profile'
+	end
+end
+
+
+post '/change-email' do
+	@user = current_user
+	if params[:newemail] == params[:confirmnewemail]
+		@user.update(email: params[:confirmnewemail])
+		flash[:notice]="Your email has been changed."
+		redirect '/edit-profile'
+	else
+		flash[:notice]="Your emails don't match."
+		redirect '/edit-profile'
+	end
+end
+
+
 get '/dead-user' do
 	@user = current_user
 	@user.destroy
+	flash[:notice]="We will miss you!"
 	redirect '/sign-up'
 end
 	

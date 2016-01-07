@@ -13,6 +13,11 @@ a {
 	text-decoration: none;
 }
 
+.flashnotice {
+	background-color: pink;
+	font-size: 18px;
+}
+
 nav {
 	height: 20px;
 }
@@ -37,9 +42,18 @@ nav li:hover {
 	transform: scale(1.2, 1.2);
 }
 
+header {
+	font-size: 18px;
+}
+
+header img {
+	height: 40px;
+	padding-left: 10px;
+}
+
 #login, #sign-up, .main {
 	width: 50%;
-	margin: 50px auto 20px;
+	margin: 0px auto 20px;
 	text-align: center;
 }
 
@@ -87,7 +101,7 @@ h1, h3 {
 	display: inline-block;
 }
 
-#delete_account h1, p{
+#delete_account h1, #delete_account p{
 	border: solid 3px black;
 	display: inline-block;
 	padding: 10px;
