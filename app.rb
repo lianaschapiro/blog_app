@@ -5,7 +5,7 @@ require "./models"
 require "carrierwave"
 
 
-configure(:development){set :database, "sqlite3:myblogdb.sqlite3"}
+set :database, "sqlite3:myblogdb.sqlite3"
 enable :sessions
 
 get '/' do
