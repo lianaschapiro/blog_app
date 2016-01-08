@@ -2,7 +2,6 @@ require "sinatra"
 require "sinatra/activerecord"
 require "sinatra/flash"
 require "./models"
-require "carrierwave"
 
 
 set :database, "sqlite3:myblogdb.sqlite3"
