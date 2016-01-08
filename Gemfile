@@ -6,11 +6,5 @@ gem "rake"
 gem "sinatra-flash"
 gem "carrierwave"
 gem "rerun"
+gem "sqlite3"
 
-group :development do 
-	gem "sqlite3"
-end
-
-group :production do 
-	gem "pg"
-end
