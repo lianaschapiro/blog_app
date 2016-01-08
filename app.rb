@@ -2,7 +2,6 @@ require "sinatra"
 require "sinatra/activerecord"
 require "sinatra/flash"
 require "./models"
-require "carrierwave"
 
 
 set :database, "sqlite3:myblogdb.sqlite3"
@@ -77,12 +76,7 @@ get '/profile' do
 end
 
 
-get '/:username' do
-	@posts = Post.all
-	@user = current_user
-	@person = User.where(username: params[:username]).first
-	erb :otherpersonprofile
-end
+
 
 
 post '/new-post' do
@@ -179,5 +173,12 @@ get '/dead-user' do
 	@user.destroy
 	flash[:notice]="We will miss you!"
 	redirect '/sign-up'
+end
+
+get '/:username' do
+	@posts = Post.all
+	@user = current_user
+	@person = User.where(username: params[:username]).first
+	erb :otherpersonprofile
 end
 	
