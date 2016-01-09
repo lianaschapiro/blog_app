@@ -23,7 +23,7 @@
 			<br>
 			<h3><%= t.title %></h3>
 			<p>By: <%= t.user.username %></p>
-			<p style="font-size:14px"><%= t.created_at.strftime("Posted: %B %d, %Y at %I:%M %p")%></p>
+			<p style="font-size:14px"><%= t.created_at.strftime("Posted: %B %d, %Y at %I:%M %p %Z") %></p>
 			<hr>
 			<p><%= t.body %></p>
 			<br> 

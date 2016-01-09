@@ -1,0 +1,1 @@
+This is a blog with C-R-U-D capability. The blog has two classes - Users and Posts. Users can create accounts, sign-in, log out, and see other users' profiles. They can also create and delete posts. Made in class by Liana Schapiro and Edwin Alvarado using Sinatra.
